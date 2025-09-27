@@ -1,0 +1,17 @@
+# React Frontend project dependencies
+
+Node version: >=14.x (recommended)
+
+Dependencies:
+- react: ^18.2.0
+- react-dom: ^18.2.0
+- react-router-dom: ^6.8.0
+
+Dev Dependencies:
+- @types/react: ^18.0.27
+- @types/react-dom: ^18.0.10
+- @vitejs/plugin-react: ^5.0.3
+- vite: ^7.1.7
+
+To install dependencies, run:
+npm install
