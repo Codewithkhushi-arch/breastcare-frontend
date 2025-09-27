@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/heart.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="BreastCare - Empowering women with knowledge, support, and resources for breast cancer awareness, early detection, and comprehensive care." />
+    <meta name="keywords" content="breast cancer, awareness, screening, mammogram, support, prevention, treatment" />
+    <meta name="author" content="BreastCare" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="BreastCare - Awareness & Support" />
+    <meta property="og:description" content="Your partner in breast health. Early detection saves lives." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://breastcare.org" />
+    <meta property="og:image" content="/og-image.jpg" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="BreastCare - Awareness & Support" />
+    <meta name="twitter:description" content="Your partner in breast health. Early detection saves lives." />
+    <meta name="twitter:image" content="/twitter-image.jpg" />
+    
+    <!-- Preload critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Theme Color for Mobile Browsers -->
+    <meta name="theme-color" content="#ec4899" />
+    
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    
+    <!-- Manifest for PWA -->
+    <link rel="manifest" href="/manifest.json" />
+    
+    <title>BreastCare - Awareness & Support</title>
+    
+    <style>
+      /* Critical CSS for initial loading */
+      .loading-spinner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(135deg, #fef2f2 0%, #fce7f3 100%);
+      }
+      
+      .spinner {
+        width: 50px;
+        height: 50px;
+        border: 5px solid #f3f4f6;
+        border-top: 5px solid #ec4899;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      /* Basic reset and font loading */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+        background: linear-gradient(135deg, #fef2f2 0%, #fce7f3 100%);
+        min-height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <!-- Loading spinner shown until React app loads -->
+      <div class="loading-spinner">
+        <div class="spinner"></div>
+      </div>
+    </div>
+    
+    <!-- Noscript fallback for users without JavaScript -->
+    <noscript>
+      <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
+        <h1 style="color: #ec4899; margin-bottom: 20px;">BreastCare - Awareness & Support</h1>
+        <p style="margin-bottom: 20px; font-size: 18px; color: #374151;">
+          JavaScript is required to run this application. Please enable JavaScript to continue.
+        </p>
+        <div style="background: white; padding: 30px; border-radius: 10px; max-width: 600px; margin: 0 auto; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+          <h2 style="color: #374151; margin-bottom: 15px;">Important Contact Information</h2>
+          <p style="margin-bottom: 10px;"><strong>24/7 Crisis Support Hotline:</strong></p>
+          <p style="font-size: 24px; color: #ec4899; font-weight: bold; margin-bottom: 20px;">1-800-227-2345</p>
+          <p style="margin-bottom: 15px;"><strong>Email:</strong> support@breastcare.org</p>
+          <p style="margin-bottom: 15px;"><strong>Emergency:</strong> If this is a medical emergency, please call 911 immediately.</p>
+        </div>
+      </div>
+    </noscript>
+    
+    <script type="module" src="/src/index.js"></script>
+    
+    <!-- Simple analytics script (optional) -->
+    <script>
+      // Basic analytics to track page views
+      window.addEventListener('load', function() {
+        if (navigator.doNotTrack !== '1') {
+          // Your analytics code here
+          console.log('BreastCare application loaded successfully');
+        }
+      });
+      
+      // Service Worker registration for PWA features
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js').then(function(registration) {
+            console.log('SW registered: ', registration);
+          }).catch(function(registrationError) {
+            console.log('SW registration failed: ', registrationError);
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
